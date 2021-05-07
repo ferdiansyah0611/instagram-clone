@@ -76,10 +76,26 @@ class Home extends React.Component{
 					result => (
 						<div className="flex flex-wrap">
 							<div className="w-full md:w-3/5">
-								<div className="bg-white w-full h-32 border border-gray-300"></div>
+								<div className="bg-white w-full border border-gray-300">
+									<div className="grid grid-flow-col auto-cols-max overflow-auto">
+									{
+										[1,2,3,4,5,6,7,8,9,10].map((data, key) => {
+											return(
+												<div className="">
+													<img
+														src={result.users.avatar}
+														alt="avatars"
+														className="rounded-full w-24 h-24 p-3"
+													/>
+												</div>
+											)
+										})
+									}
+									</div>
+								</div>
 								<CardPost post={this.state.post} comment={this.state.comment} />
 							</div>
-							<div className="w-full md:w-2/5 md:ml-32 md:fixed md:top-0 md:right-0 overflow-auto md:mt-14" style={{height: '89vh'}}>
+							<div className="w-full hidden md:block md:w-2/5 md:ml-32 md:fixed md:top-0 md:right-0 overflow-auto md:mt-14" style={{height: '89vh'}}>
 								<div className="flex">
 									<div>
 										<img
@@ -97,7 +113,7 @@ class Home extends React.Component{
 									</div>
 								</div>
 								<div className="flex">
-									<p className="w-2/2 float-left 32xl:text-opacity-75 text-gray-500 font-bold">Recommend for you</p>
+									<p className="w-2/2 float-left 32xl:text-opacity-75 text-gray-500 font-bold">Recommended for you</p>
 								</div>
 								{
 									[0,1,2,3,4].map((data, key) => {
