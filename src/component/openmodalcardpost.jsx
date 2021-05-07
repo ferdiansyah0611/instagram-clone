@@ -54,7 +54,7 @@ class OpenModalCardPost extends React.Component{
 			<>
 			{
 				this.state.open ?
-				<div className="fixed top-0 left-0 bg-gray-600 bg-opacity-75 w-full h-screen z-50 overflow-auto p-5 sm:p-0">
+				<div className="fixed top-0 left-0 bg-black bg-opacity-75 w-full h-screen z-50 overflow-auto p-5 sm:p-0">
 					<XIconO onClick={this.open} className="h-6 fixed right-0 mr-10 ml-5 mt-5 mb-5 cursor-pointer text-white"/>
 					<div className="bg-white mt-20 mb-20 w-full sm:w-2/3 mx-auto">
 						<div className="flex flex-wrap justify-center">

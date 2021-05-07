@@ -89,7 +89,7 @@ class Navbar extends React.Component {
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Saved</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Setting</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Change Account</Link>
-              <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full border-t-2">Logout</Link>
+              <Link to="/login" className="p-3 text-sm hover:bg-gray-200 w-full border-t-2">Logout</Link>
             </div>
             <div onClick={this.dropdown} className={this.state.opacityDropdown}></div>
             </>
