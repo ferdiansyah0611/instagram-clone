@@ -1,0 +1,6 @@
+.chat .action-chat{
+	display: none;
+}
+.chat:hover .action-chat{
+	display: flex;
+}
