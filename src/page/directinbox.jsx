@@ -12,7 +12,8 @@ import {
 	ReplyIcon as ReplyIconO,
 	DotsHorizontalIcon as DotsHorizontalO,
 	XIcon as XIconO,
-	PlusCircleIcon as PlusCircleIconO
+	PlusCircleIcon as PlusCircleIconO,
+	ChevronLeftIcon as ChevronLeftIconO
 } from '@heroicons/react/outline'
 
 import '../style/directinbox.css'
@@ -50,6 +51,7 @@ class DirectInbox extends React.Component{
 		}
 		this.changeTab = this.changeTab.bind(this)
 		this.modalCreateChat = this.modalCreateChat.bind(this)
+		this.closeChat = this.closeChat.bind(this)
 	}
 	modalCreateChat(e){
 		if(this.state.statusModal){
@@ -62,9 +64,19 @@ class DirectInbox extends React.Component{
 	changeTab(e){
 		e.preventDefault()
 		this.setState({activeKeyTabs: Number(e.target.dataset.key)})
+		if(document.body.offsetWidth < 768){
+			document.querySelector('#list-chat').classList.add('hidden')
+			document.querySelector('#chat').classList.remove('hidden')
+		}
+	}
+	closeChat(e){
+		if(document.body.offsetWidth < 768){
+			document.querySelector('#list-chat').classList.remove('hidden')
+			document.querySelector('#chat').classList.add('hidden')
+		}
 	}
 	componentDidMount(){
-		document.title = 'Inbox - Chat'
+		document.title = 'Inbox - Chat | Instagram Clone'
 		this.context.setState('url', '/direct/inbox')
 	}
 	render(){
@@ -77,6 +89,7 @@ class DirectInbox extends React.Component{
 					<>
 						<div id="opacity-modal" className={this.state.opacityModal}>
 						{
+							/*modal opened*/
 							this.state.statusModal ?
 								<div className="m-auto bg-white w-72 sm:w-96 h-80 rounded-2xl mt-40">
 									<div className="flex border border-gray-400 border-l-0 border-r-0 border-t-0">
@@ -122,7 +135,7 @@ class DirectInbox extends React.Component{
 						}
 						</div>
 						<div className="flex flex-wrap bg-white border border-gray-300">
-							<div className="w-full md:w-1/3">
+							<div className="w-full md:w-1/3" id="list-chat">
 								<div className="flex justify-center border border-t-0 border-l-0 border-r-0 border-gray-300">
 									<div className="cursor-pointer font-bold p-5 text-center w-4/5">
 										<p className="flex justify-center text-center">
@@ -150,9 +163,15 @@ class DirectInbox extends React.Component{
 								}
 								</div>
 							</div>
-							<div className="w-full md:w-2/3 relative">
+							{
+								/*chat*/
+							}
+							<div className="w-full md:w-2/3 relative hidden md:block" id="chat">
 								<div className="border border-l-0 md:border-l border-t-0 border-r-0 border-b-0 border-gray-300 h-96 md:h-full">
 									<div className="flex justify-center border border-t md:border-t-0 border-l-0 border-r-0 border-gray-300">
+										<span className="flex justify-center pl-8 cursor-pointer" onClick={this.closeChat}>
+											<ChevronLeftIconO className="h-8 mt-4" />
+										</span>
 										<div className="cursor-pointer font-bold p-5 text-center w-4/5">
 											<p className="flex text-center">
 												<img
