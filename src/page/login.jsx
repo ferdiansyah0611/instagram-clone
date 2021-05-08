@@ -1,13 +1,18 @@
 import React from 'react'
-
 import {
   Link
 } from 'react-router-dom'
+import DefaultContext from '../context.js'
 
 class Login extends React.Component{
+	static contextType = DefaultContext
 	constructor(props){
 		super(props)
 		this.state = {}
+	}
+	componentDidMount(){
+		document.title = 'Login | Instagram Clone'
+		this.context.setState('url', '/login')
 	}
 	render(){
 		return(
