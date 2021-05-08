@@ -2,9 +2,7 @@ import React from 'react'
 import {
   Link,
 } from 'react-router-dom'
-
 import DefaultContext from '../context.js'
-
 import CardPost from '../component/cardpost.jsx'
 
 class Home extends React.Component{
@@ -65,6 +63,7 @@ class Home extends React.Component{
 		}
 	}
 	componentDidMount(){
+		document.title = 'Home | Instagram Clone'
 		this.context.setState('url', '/')
 	}
 	render(){
