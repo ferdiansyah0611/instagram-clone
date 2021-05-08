@@ -1,13 +1,18 @@
 import React from 'react'
-
 import {
   Link
 } from 'react-router-dom'
+import DefaultContext from '../context.js'
 
 class Register extends React.Component{
+	static contextType = DefaultContext
 	constructor(props){
 		super(props)
 		this.state = {}
+	}
+	componentDidMount(){
+		document.title = 'Register | Clone Instagram'
+		this.context.setState('url', '/register')
 	}
 	render(){
 		return(
