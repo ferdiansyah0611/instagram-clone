@@ -55,22 +55,22 @@ class Navbar extends React.Component {
                 <a href="https://github.com/ferdiansyah0611/instagram-clone" class="p-4 pl-0 font-bold hidden lg:block">Instagram Clone</a>
               </div>
               <div class="flex w-full lg:w-1/2 lg:mr-5 md:mr-14 lg:-mr32 justify-center">
-                <Link to="/" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200">
+                <Link to="/" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200 text-blue-400">
                 {
                   result.url === '/' ? <HomeIcon className="h-6 mx-auto"/>: <HomeIconO className="h-6 mx-auto"/>
                 }
                 </Link>
-                <Link to="/direct/inbox" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200">
+                <Link to="/direct/inbox" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200 text-green-400">
                 {
                   result.url === '/direct/inbox' ? <ChatAltIcon className="h-6 mx-auto"/>: <ChatAltIconO className="h-6 mx-auto"/>
                 }
                 </Link>
-                <Link to="/explore" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200">
+                <Link to="/explore" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200 text-indigo-400">
                 {
                   result.url === '/explore' ? <LocationMarkerIcon className="h-6 mx-auto"/>: <LocationMarkerIconO className="h-6 mx-auto"/>
                 }
                 </Link>
-                <Link to="/account/activity" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200">
+                <Link to="/account/activity" class="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200 text-red-400">
                 {
                   result.url === '/account/activity' ? <HeartIcon className="h-6 mx-auto"/>: <HeartIconO className="h-6 mx-auto"/>
                 }
