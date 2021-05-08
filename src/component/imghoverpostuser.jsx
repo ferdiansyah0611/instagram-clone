@@ -1,9 +1,5 @@
 import React from 'react'
 import DefaultContext from '../context.js'
-import {
-  ChatAlt2Icon,
-  HeartIcon,
-} from '@heroicons/react/solid'
 import OpenModalHoverImgPost from './openmodalhoverimgpost.jsx'
 
 class ImgHoverPostUser extends React.Component{
