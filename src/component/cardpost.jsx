@@ -29,9 +29,9 @@ class CardPost extends React.Component{
 									alt="avatars"
 									className="rounded-full w-12 h-12 border-2 border-red-400"
 								/>
-								<div className="w-1/2">
+								<Link to={'/profile/' + data.name} className="w-1/2">
 									<p className="font-bold text-sm hover:underline cursor-pointer p-3">{data.name}</p>
-								</div>
+								</Link>
 								<div className="w-1/2"></div>
 								<DotsHorizontalIcon className="h-7 cursor-pointer" />
 							</div>
@@ -45,7 +45,7 @@ class CardPost extends React.Component{
 								<p className="p-3 pt-0 font-bold text-sm">1,000 Like</p>
 								<div className="p-3 pt-0">
 									<p className="text-sm">
-										<span className="font-bold hover:underline cursor-pointer">{data.name} </span>
+										<Link to={'/profile/' + data.name} className="font-bold hover:underline cursor-pointer">{data.name} </Link>
 										<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia deleniti eos aut earum ea. Aperiam consequatur, quisquam. Deserunt fugiat quidem impedit tenetur. Voluptatum quam, placeat cum adipisci doloremque voluptate quia?</span>
 									</p>
 									<OpenModalCardPost data={data}/>
