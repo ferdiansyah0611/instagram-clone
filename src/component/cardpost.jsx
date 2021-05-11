@@ -25,7 +25,7 @@ class CardPost extends React.Component{
 						<div className="bg-white w-full border border-gray-300 mt-5 rounded z-50">
 							<div className="header-card p-3 flex">
 								<img
-									src={data.avatar}
+									src={data.photo}
 									alt="avatars"
 									className="rounded-full w-12 h-12 border-2 border-red-400"
 								/>
@@ -37,7 +37,7 @@ class CardPost extends React.Component{
 							</div>
 							<div className="body-card">
 								<img
-									src={data.img}
+									src={data.image}
 									alt="post"
 									className="w-full"
 								/>
@@ -46,7 +46,7 @@ class CardPost extends React.Component{
 								<div className="p-3 pt-0">
 									<p className="text-sm">
 										<Link to={'/profile/' + data.name} className="font-bold hover:underline cursor-pointer">{data.name} </Link>
-										<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia deleniti eos aut earum ea. Aperiam consequatur, quisquam. Deserunt fugiat quidem impedit tenetur. Voluptatum quam, placeat cum adipisci doloremque voluptate quia?</span>
+										<span>{data.description}</span>
 									</p>
 									<OpenModalCardPost data={data}/>
 									{

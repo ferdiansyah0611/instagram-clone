@@ -1,6 +1,13 @@
 import React from 'react'
 import DefaultContext from '../context.js'
 import ImgHoverPostUser from '../component/imghoverpostuser.jsx'
+import {
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed
+} from "@react-firebase/auth";
+import {
+  Redirect
+} from 'react-router-dom'
 
 class Explore extends React.Component{
 	static contextType = DefaultContext
@@ -68,9 +75,18 @@ class Explore extends React.Component{
 	render(){
 		return(
 			<>
-			<div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-				<ImgHoverPostUser data={this.state.img}/>
-			</div>
+				<IfFirebaseUnAuthed>
+				{() => (
+					<Redirect to="/login"/>
+				)}
+				</IfFirebaseUnAuthed>
+				<IfFirebaseAuthed>
+				{() => (
+					<div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+						<ImgHoverPostUser data={this.state.img}/>
+					</div>
+				)}
+				</IfFirebaseAuthed>
 			</>
 		)
 	}

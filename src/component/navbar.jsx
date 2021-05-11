@@ -20,6 +20,9 @@ import {
   HeartIcon as HeartIconO,
 } from '@heroicons/react/outline'
 
+import firebase from "firebase/app";
+import "firebase/auth";
+
 class Navbar extends React.Component {
 	constructor(props){
     super(props)
@@ -86,10 +89,11 @@ class Navbar extends React.Component {
             </div>
             <div className={this.state.classDropdown}>
               <Link to={"/profile/" + result.users.name} className="p-3 text-sm hover:bg-gray-200 w-full">Profile</Link>
+              <Link to="/posts/create" className="p-3 text-sm hover:bg-gray-200 w-full">Create Posts</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Saved</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Setting</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Change Account</Link>
-              <Link to="/login" className="p-3 text-sm hover:bg-gray-200 w-full border-t-2">Logout</Link>
+              <span onClick={(e) => firebase.auth().signOut()} className="p-3 text-sm hover:bg-gray-200 w-full border-t-2 cursor-pointer">Logout</span>
             </div>
             <div onClick={this.dropdown} className={this.state.opacityDropdown}></div>
             </>
