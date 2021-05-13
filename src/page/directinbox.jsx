@@ -95,13 +95,11 @@ class DirectInbox extends React.Component{
 	componentDidMount(){
 		document.title = 'Inbox - Chat | Instagram Clone'
 		this.context.setState('url', '/direct/inbox')
-		window.db = this.db
 		const user = firebase.auth().currentUser
 		this.setState({user: user})
 		this.db.ref('messages').on('value', snapshot => {
-			/*this.setState({chats: []})*/
+			this.setState({chats: []})
 			snapshot.forEach((snap) => {
-				alert(snap.val())
 				this.setState({chats: [...this.state.chats, snap.val()]})
 			})
 		})
@@ -146,7 +144,7 @@ class DirectInbox extends React.Component{
 												{
 													[1,2,3,4,5,6,7,8,9,10].map((data, key) => {
 														return(
-															<div className="flex mt-2 mb-2 cursor-pointer">
+															<div key={key} className="flex mt-2 mb-2 cursor-pointer">
 																<div className="w-1/4">
 																	<img
 																		src={result.users.avatar}
@@ -224,7 +222,7 @@ class DirectInbox extends React.Component{
 											{
 												this.state.userChat.map((data, key) => {
 													return(
-														<div className={this.state.activeKeyTabs === key ? 'block p-3 relative': 'hidden p-3 relative'}>
+														<div key={key} className={this.state.activeKeyTabs === key ? 'block p-3 relative': 'hidden p-3 relative'}>
 														{
 															this.state.chats.map((data, key) => {
 																return data.from_user === this.state.user.uid ?

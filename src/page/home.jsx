@@ -51,7 +51,9 @@ class Home extends React.Component{
 		const db    = firebaseDb.firestore()
     	var docRef  = db.collection('posts');
     	docRef.get().then((doc) => {
+    		console.log(doc)
 	    	doc.forEach(data => {
+	    		console.log(data)
 	    	  	if(data.exists){
 	    	  		db.collection('users').doc(data.data().user_id).get().then((docUser) => {
 	    	  			console.log(docUser)
@@ -59,6 +61,7 @@ class Home extends React.Component{
 	    	  				var result 		= data.data()
 	    	  				result.photo 	= docUser.data().photo
 	    	  				result.name 	= docUser.data().name
+	    	  				console.log(result)
     						this.setState({posts: [...this.state.posts, result]})
 
 	    	  			}
@@ -151,7 +154,7 @@ class Home extends React.Component{
 										<footer className="flex flex-wrap">
 										{
 											result.footer.data.map((data, key) => {
-												return <Link key={key} href="/" className="text-gray-600 text-sm p-2">{data}</Link>
+												return <Link key={key} to="/" className="text-gray-600 text-sm p-2">{data}</Link>
 											})
 										}
 										</footer>

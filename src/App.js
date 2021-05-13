@@ -67,20 +67,20 @@ class App extends React.Component{
                     <Home />
                   </Route>
                   <Route path="/login">
-                    <nav class="bg-white border border-r-0 border-l-0 border-gray-300 fixed top-0 left-0 w-full z-40">
-                      <div class="flex">
-                        <div class="flex w-1/2 lg:ml-5 md:ml-14 lg:ml-32 lg:justify-start">
-                          <Link to="/" class="p-4 font-bold">Instagram Clone</Link>
+                    <nav className="bg-white border border-r-0 border-l-0 border-gray-300 fixed top-0 left-0 w-full z-40">
+                      <div className="flex">
+                        <div className="flex w-1/2 lg:ml-5 md:ml-14 lg:ml-32 lg:justify-start">
+                          <Link to="/" className="p-4 font-bold">Instagram Clone</Link>
                         </div>
                       </div>
                     </nav>
                     <Login />
                   </Route>
                   <Route path="/register">
-                    <nav class="bg-white border border-r-0 border-l-0 border-gray-300 fixed top-0 left-0 w-full z-40">
-                      <div class="flex">
-                        <div class="flex w-1/2 lg:ml-5 md:ml-14 lg:ml-32 lg:justify-start">
-                          <Link to="/" class="p-4 font-bold">Instagram Clone</Link>
+                    <nav className="bg-white border border-r-0 border-l-0 border-gray-300 fixed top-0 left-0 w-full z-40">
+                      <div className="flex">
+                        <div className="flex w-1/2 lg:ml-5 md:ml-14 lg:ml-32 lg:justify-start">
+                          <Link to="/" className="p-4 font-bold">Instagram Clone</Link>
                         </div>
                       </div>
                     </nav>
