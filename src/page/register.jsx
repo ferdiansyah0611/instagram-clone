@@ -36,7 +36,7 @@ class Register extends React.Component{
 	    		name: user.displayName,
 	    		email: user.email,
 	    		photo: user.photoURL
-	    	})..catch(e => console.error(e))
+	    	}).catch(e => console.error(e))
 		}).catch((error) => {
 		  	var errorCode = error.code;
 		  	var errorMessage = error.message;
