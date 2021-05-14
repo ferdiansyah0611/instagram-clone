@@ -60,7 +60,7 @@ class OpenModalCardPost extends React.Component{
 						<div className="flex flex-wrap justify-center">
 							<div className="w-full md:w-1/2">
 								<img
-									src={data.img}
+									src={data.image}
 									alt="post"
 									className="w-full"
 									onLoad={this.postImgLoad}
@@ -69,7 +69,7 @@ class OpenModalCardPost extends React.Component{
 							<div className="w-full md:w-1/2 relative">
 								<div className="header-card p-3 flex border border-r-0 border-l-0 border-t-0 border-gray-300">
 									<img
-										src={data.avatar}
+										src={data.photo}
 										alt="avatars"
 										className="rounded-full w-12 h-12 border-2 border-red-400"
 									/>
