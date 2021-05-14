@@ -38,6 +38,11 @@ class App extends React.Component{
       setState: (name, val) => {
         this.setState({[name]: val})
       },
+      default: {
+        name: 'ferdiansyah ' + Math.floor(Math.random() * 10),
+        username: 'ferdiansyah ' + Math.floor(Math.random() * 10),
+        avatar: 'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=367&q=80',
+      },
       users: {
         name: 'ferdiansyah061118',
         username: 'Ferdi Ferdiansyah',

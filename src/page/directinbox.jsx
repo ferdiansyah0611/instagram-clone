@@ -147,14 +147,14 @@ class DirectInbox extends React.Component{
 															<div key={key} className="flex mt-2 mb-2 cursor-pointer">
 																<div className="w-1/4">
 																	<img
-																		src={result.users.avatar}
+																		src={result.default.avatar}
 																		alt="avatars"
 																		className="rounded-full w-14 h-14"
 																	/>
 																</div>
 																<p className="w-2/4 flex flex-wrap">
-																	<span>{result.users.name}</span>
-																	<span className="text-gray-400 text-opacity-75">{result.users.name}</span>
+																	<span>{result.users.displayName}</span>
+																	<span className="text-gray-400 text-opacity-75">{result.users.displayName}</span>
 																</p>
 																<PlusCircleIconO className="h-10 w-1/4"></PlusCircleIconO>
 															</div>
@@ -171,7 +171,7 @@ class DirectInbox extends React.Component{
 										<div className="flex justify-center border border-t-0 border-l-0 border-r-0 border-gray-300">
 											<div className="cursor-pointer font-bold p-5 text-center w-4/5">
 												<p className="flex justify-center text-center">
-													<span className="">{result.users.name}</span> 
+													<span className="">{result.users.displayName}</span> 
 													<ChevronDownIconO className="h-6 ml-3"/>
 												</p>
 											</div>
@@ -184,7 +184,7 @@ class DirectInbox extends React.Component{
 											this.state.userChat.map((data, key) => {
 												return(
 													<a onClick={this.changeTab} data-key={key} key={key} href="/" className="hover:bg-gray-200 w-full flex flex-wrap p-3">
-														<img data-key={key} className="rounded-full w-10 lg:w-16 h-10 lg:h-16" src={result.users.avatar} alt=""/>
+														<img data-key={key} className="rounded-full w-10 lg:w-16 h-10 lg:h-16" src={result.default.avatar} alt=""/>
 														<span data-key={key} className="flex flex-wrap ml-2 w-1/2">
 															<span data-key={key} className="w-full text-sm mt-1 lg:mt-2">{data.name}</span>
 															<span data-key={key} className="w-full text-sm text-gray-400">Active</span>
@@ -207,7 +207,7 @@ class DirectInbox extends React.Component{
 												<div className="cursor-pointer font-bold p-5 text-center w-4/5">
 													<p className="flex text-center">
 														<img
-															src={result.users.avatar}
+															src={result.default.avatar}
 															alt="avatars"
 															className="rounded-full w-6 h-6 mr-3"
 														/>
@@ -234,7 +234,7 @@ class DirectInbox extends React.Component{
 																		</p>
 																		<p className="rounded-2xl border border-gray-300 p-3 bg-gray-200">{data.messages}</p>
 																		<img
-																			src={result.users.avatar}
+																			src={result.default.avatar}
 																			alt="avatars"
 																			className="rounded-full w-6 h-6 ml-3"
 																		/>
@@ -242,7 +242,7 @@ class DirectInbox extends React.Component{
 																:
 																	<div className="chat flex justify-start mb-4">
 																		<img
-																			src={result.users.avatar}
+																			src={result.default.avatar}
 																			alt="avatars"
 																			className="rounded-full w-6 h-6 mr-3"
 																		/>

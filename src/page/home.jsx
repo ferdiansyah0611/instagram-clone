@@ -51,9 +51,7 @@ class Home extends React.Component{
 		const db    = firebaseDb.firestore()
     	var docRef  = db.collection('posts');
     	docRef.get().then((doc) => {
-    		console.log(doc)
 	    	doc.forEach(data => {
-	    		console.log(data)
 	    	  	if(data.exists){
 	    	  		db.collection('users').doc(data.data().user_id).get().then((docUser) => {
 	    	  			console.log(docUser)
@@ -61,7 +59,6 @@ class Home extends React.Component{
 	    	  				var result 		= data.data()
 	    	  				result.photo 	= docUser.data().photo
 	    	  				result.name 	= docUser.data().name
-	    	  				console.log(result)
     						this.setState({posts: [...this.state.posts, result]})
 
 	    	  			}
@@ -91,7 +88,7 @@ class Home extends React.Component{
 													return(
 														<div className="" key={key}>
 															<img
-																src={result.users.avatar}
+																src={result.default.avatar}
 																alt="avatars"
 																className="rounded-full w-24 h-24 p-3"
 															/>
@@ -110,14 +107,14 @@ class Home extends React.Component{
 															<div className="flex">
 																<div>
 																	<img
-																		src={result.users.avatar}
+																		src={result.users.photoURL}
 																		alt="avatars"
 																		className="rounded-full w-20 h-20 p-3"
 																	/>
 																</div>
 																<div className="w-1/3 p-3">
 																	<p className="text-sm mt-1 font-bold">{user.displayName}</p>
-																	<p className="text-sm mt-1 text-opacity-75 text-black">{result.users.username}</p>
+																	<p className="text-sm mt-1 text-opacity-75 text-black">{result.default.username}</p>
 																</div>
 																<div className="w-1/3 p-3 text-right">
 																	<Link to="/" className="text-blue-900 text-sm">Switch</Link>
@@ -135,14 +132,14 @@ class Home extends React.Component{
 													<div key={key} className="flex">
 														<div>
 															<img
-																src={result.users.avatar}
+																src={result.default.avatar}
 																alt="avatars"
 																className="rounded-full w-20 h-20 p-3"
 															/>
 														</div>
 														<div className="w-1/3 p-3">
-															<Link to={'/profile/' + result.users.name} className="text-sm mt-1 font-bold hover:underline">{result.users.name}</Link>
-															<p className="text-sm mt-1 text-opacity-75 text-black">{result.users.username}</p>
+															<Link to={'/profile/' + result.default.name} className="text-sm mt-1 font-bold hover:underline">{result.default.name}</Link>
+															<p className="text-sm mt-1 text-opacity-75 text-black">{result.default.username}</p>
 														</div>
 														<div className="w-1/3 p-3 text-right">
 															<a href="/" className="text-blue-900 text-sm">Follow</a>

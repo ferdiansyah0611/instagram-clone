@@ -35,7 +35,7 @@ class Login extends React.Component{
 	    		email: result.user.email,
 	    		photo: result.user.photoURL
 	    	}).then((result) => {
-	    		console.log(result)
+	    		this.context.setState('users', result.user)
 	    	}).catch(e => console.error(e))
 	    }).catch((e) => {
 	    	console.log(e.code)

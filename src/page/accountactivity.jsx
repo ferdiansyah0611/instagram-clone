@@ -37,16 +37,16 @@ class AccountActivity extends React.Component{
 									return(
 										<div className="flex p-4 cursor-pointer">
 											<div>
-												<img src={result.users.avatar} className="rounded-full w-16 h-16" alt=""/>
+												<img src={result.default.avatar} className="rounded-full w-16 h-16" alt=""/>
 											</div>
 											<div className="ml-2 mr-2 text-sm w-2/3">
-												<a href="/" className="font-bold hover:underline">{result.users.name} </a>
+												<a href="/" className="font-bold hover:underline">{result.default.name} </a>
 												<p>
 													Liked your comment. <span className="text-gray-400">3 days ago</span>
 												</p>
 											</div>
 											<div>
-												<img src={result.users.avatar} className="w-16 h-16" alt="avatar"/>
+												<img src={result.users.photoURL} className="w-16 h-16" alt="avatar"/>
 											</div>
 										</div>
 									)

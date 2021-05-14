@@ -43,7 +43,7 @@ class ProfileShow extends React.Component{
 							<div className="">
 								<div className="flex w-full">
 									<div className="w-1/5">
-										<img src={result.users.avatar} alt="avatar" className="mx-auto rounded-full w-20 h-16 md:w-32 md:h-32 border-4 border-red-600 "/>
+										<img src={result.users.photoURL} alt="avatar" className="mx-auto rounded-full w-20 h-16 md:w-32 md:h-32 border-4 border-red-600 "/>
 									</div>
 									<div className="w-4/5">
 										<div className="flex flex-wrap ml-2 sm:ml-0">
@@ -69,7 +69,7 @@ class ProfileShow extends React.Component{
 											<p className="text-xs sm:text-sm ml-1 sm:w-1/3 cursor-pointer"><span className="font-bold">10M</span> follows</p>
 										</div>
 										<div className="flex flex-wrap ml-2 sm:ml-0 mt-2">
-											<div className="text-sm font-bold w-full">{result.users.username}</div>
+											<div className="text-sm font-bold w-full">{result.default.username}</div>
 											<p className="w-full">I from US.</p>
 										</div>
 									</div>
@@ -85,14 +85,14 @@ class ProfileShow extends React.Component{
 									<div className="content grid grid-cols-2 sm:grid-cols-4 gap-2 auto-cols-max">
 									<ImgHoverPostUser
 										data={[
-											{id: 1, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 2, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 3, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 4, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 5, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 6, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 7, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
-											{id: 8, name: result.users.name, avatar: result.users.avatar, like: 390, comment: 1000, img: this.state.img},
+											{id: 1, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 2, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 3, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 4, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 5, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 6, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 7, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
+											{id: 8, name: result.users.displayName, avatar: result.users.photoURL, like: 390, comment: 1000, img: this.state.img},
 										]}
 									/>
 									</div>

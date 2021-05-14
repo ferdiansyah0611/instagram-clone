@@ -80,7 +80,7 @@ class Navbar extends React.Component {
                 </Link>
                 <a href="/" onClick={this.dropdown} className="py-4 px-6 w-1/5 lg:w-auto hover:bg-gray-200 cursor-pointer">
                   <img
-                  	src={result.users.avatar}
+                  	src={result.users.photoURL}
                   	alt="avatars"
                   	className="rounded-full w-6 h-6 mx-auto"
                   />
@@ -88,7 +88,7 @@ class Navbar extends React.Component {
               </div>
             </div>
             <div className={this.state.classDropdown}>
-              <Link to={"/profile/" + result.users.name} className="p-3 text-sm hover:bg-gray-200 w-full">Profile</Link>
+              <Link to={"/profile/" + result.users.displayName} className="p-3 text-sm hover:bg-gray-200 w-full">Profile</Link>
               <Link to="/posts/create" className="p-3 text-sm hover:bg-gray-200 w-full">Create Posts</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Saved</Link>
               <Link to="/" className="p-3 text-sm hover:bg-gray-200 w-full">Setting</Link>
